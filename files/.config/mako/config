@@ -1,0 +1,29 @@
+font=Iosevka Nerd Font 11
+sort=-time
+layer=overlay
+anchor=top-right
+background-color=#232A2E
+width=300
+height=110
+margin=5
+padding=0,5,10
+border-size=2
+border-color=#A7C080
+border-radius=0
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+
+[urgency=high]
+border-color=#bf616a
+default-timeout=0
+
+[app-name=lightcord]
+border-color=#88c0d0
+
+[summary~="log-.*"]
+border-color=#a3be8c
+
+[app-name=lightcord summary~="(.*(^| )orz|ORZ|sto|STO|otl|OTL( |$).*)"]
+invisible=1
