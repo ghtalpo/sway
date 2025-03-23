@@ -20,6 +20,12 @@ Main Branch (*Grimy Grove*)
 
 ## 🏔️ Installation 🏔️
 
+0- Install packages
+
+``` shell
+sudo pacman -S sway waybar rofi mako kitty nwg-bar fortune-mod
+```
+
 1 - Clone the repository:
 
 ``` shell
