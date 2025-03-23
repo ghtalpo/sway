@@ -1,0 +1,16 @@
+window {
+    background-color: #2b3339; /* Main background color */
+}
+
+#box-outer {
+    background-color: #2b3339; /* Same as main background */
+}
+
+#box-inner {
+    background-color: #323c41; /* Slightly lighter for inner box */
+    border-radius: 5px;
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #868d80; /* Muted border color */
+    padding: 10px;
+}
