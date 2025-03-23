@@ -55,4 +55,8 @@ configuration {
 
 //@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
 
+//@theme "/home/arkboi/.config/rofi/themes/sway.rasi"
+
+//@theme "/home/arkboi/.config/rofi/themes/squared-everforest.rasi"
+
 @theme "/home/arkboi/.config/rofi/themes/sway.rasi"

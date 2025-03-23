@@ -1,1 +1,0 @@
-.config/nwg-wrapper/timezones.sh

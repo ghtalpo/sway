@@ -7,7 +7,7 @@
     "margin-bottom": 0,
     "modules-left": ["sway/workspaces", "sway/mode", "mpd", "custom/weather"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/playerctl", "pulseaudio", "backlight", "network", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "custom/quote", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "network", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "custom/quote", "tray"],
 
     "sway/workspaces": {
         "disable-scroll": true,

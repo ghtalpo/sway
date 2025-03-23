@@ -1,8 +1,8 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
+# https://github.com/arkboix
+# Sway WM Configuration File
+# AUTHOR: Arkboi X
+# CREDIT: https://github.com/arkboix
+
 
 ### Variables
 #
@@ -17,9 +17,10 @@ set $right l
 set $term kitty
 # Your preferred application launcher
 set $menu rofi -show drun
-# FIle
+# File Manager
 set $file-manager nemo
 
+### Colorscheme
 
 # Everforest colors
 set $bg0  #2d353b
@@ -32,30 +33,26 @@ set $gray  #868d80
 
 ### Output configuration
 #
-# Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+output HDMI-A-1 resolution 1920x1080 position 1920,0
 
 ### Idle configuration
 #
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+
+ exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-# Font
+### Font Configuration
 
-font pango:Iosevka Nerd Font Mono 10
+font pango:Iosevka Nerd Font Mono 12
 
-# Autostart
+### Autostart
 
 
 ## Sway Automatic Tiling
@@ -76,19 +73,13 @@ exec mako
 ## NWG Wrapper keybinds
 exec nwg-wrapper -t sway.pango -p left -a end -mb 10 -ml 10
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+## Autostart Applications
+
+exec swaymsg "workspace 1; exec floorp" & sleep 1
+exec swaymsg "workspace 2; exec emacsclient -c -a ''" & sleep 1
+exec swaymsg "workspace 3; exec kitty"
+
+
 
 ### Key bindings
 #
@@ -99,6 +90,9 @@ exec nwg-wrapper -t sway.pango -p left -a end -mb 10 -ml 10
 
     # Start Emacs
     bindsym $mod+e exec emacsclient -c
+
+    # Clipboard
+    bindsym $mod+v exec cliphist list | rofi -dmenu -p "Clipboard" -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy
 
     # Tiling Modes
     bindsym $mod+u exec ~/.config/sway/scripts/tiling.sh
@@ -129,7 +123,10 @@ exec nwg-wrapper -t sway.pango -p left -a end -mb 10 -ml 10
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
+    # Resize windows with left mouse button while holding $mod
     floating_modifier $mod normal
+    bindsym $mod+button1 resize
+
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -190,18 +187,11 @@ exec nwg-wrapper -t sway.pango -p left -a end -mb 10 -ml 10
 #
 # Layout stuff:
 #
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
-bindsym $mod+t floating toggle
+    bindsym $mod+t floating toggle
 
-# Resize windows with left mouse button while holding $mod
-bindsym $mod+button1 resize
 
 
     # Make the current focus fullscreen
@@ -270,18 +260,20 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 #bar {
-#    position top
-#
+ #   position top
+
 #    # When the status_command prints a new line to stdout, swaybar updates.
 #    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
+  #  status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+
+   # colors {
+    #    statusline $fg
+     #   background $bg0
+      #  inactive_workspace $bg0 $bg0 $bg1
+       # focused_workspace $green $bg1 $green
+
+    # }
+# }
 
 include @sysconfdir@/sway/config.d/*
 
@@ -296,3 +288,4 @@ client.unfocused $bg0 $bg1 $gray $bg0 $bg1
 
 # Urgent window (e.g., alerts)
 client.urgent $yellow $bg1 $fg $yellow $yellow
+
