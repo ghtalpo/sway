@@ -11,6 +11,12 @@ These are my SwayWM Configuration files. I use these with Arco Linux, but it is 
 - Waybar as top bar
 - Emacs support
 
+## Screenshot
+
+Main Branch (*Silent Storm*)
+
+![assets/1.png](assets/1.png)
+
 ## 🏔️ Installation 🏔️
 
 1 - Clone the repository:
