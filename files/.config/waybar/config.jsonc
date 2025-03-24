@@ -214,7 +214,7 @@
         "interval": 30,
         "format": "󰋊 {percentage_used}%",
         "path": "/",
-        "on-click": "kitty -e ncdu /"
+        "on-click": "kitty -e gdu /"
     },
 
     "tray": {
