@@ -8,17 +8,33 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term kitty
+
 # Your preferred application launcher
 set $menu rofi -show drun
+
 # File Manager
 set $file-manager nemo
+
+
+
+# For settings firefox as your browser, you could replace the browser line with this:
+# set $web-browser firefox
+# And same goes for any browser, just replace the command with whatever command is used to launch your browser.
+# Brave browser users need to set command as brave-bin
+# Your preferred Browser
+set $web-browser floorp
+
+
+
 
 ### Colorscheme
 
@@ -80,6 +96,12 @@ exec swaymsg "workspace 2; exec emacsclient -c -a ''" & sleep 1
 exec swaymsg "workspace 3; exec kitty"
 
 
+### Window Rules
+
+for_window [app_id="yad"] floating enable
+
+
+
 
 ### Key bindings
 #
@@ -105,6 +127,9 @@ exec swaymsg "workspace 3; exec kitty"
 
     # Reload Waybar
     bindsym $mod+shift+a exec pkill -SIGUSR2 waybar
+
+    # Call the browser variable and launch it with $mod+b
+    bindsym $mod+b exec $web-browser
 
     # Kill focused window
     bindsym $mod+w kill
@@ -288,4 +313,3 @@ client.unfocused $bg0 $bg1 $gray $bg0 $bg1
 
 # Urgent window (e.g., alerts)
 client.urgent $yellow $bg1 $fg $yellow $yellow
-
