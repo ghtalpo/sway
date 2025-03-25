@@ -1,0 +1,162 @@
+/* Everforest Dark Colors */
+@define-color black #2b3339;
+@define-color red #e67e80;
+@define-color green #a7c080;
+@define-color yellow #dbbc7f;
+@define-color blue #7fbbb3;
+@define-color magenta #d699b6;
+@define-color cyan #83c092;
+@define-color white #d3c6aa;
+@define-color gray #859289;
+
+/* Aliases for module colors */
+@define-color clock @blue;
+@define-color battery @green;
+@define-color cpu @magenta;
+@define-color memory @yellow;
+@define-color temperature @red;
+@define-color network @cyan;
+@define-color pulseaudio @white;
+@define-color workspaces @gray;
+@define-color tray @white;
+@define-color mode @yellow;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Iosevka Nerd Font", monospace;
+    font-size: 12px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: rgba(43, 51, 57, 0.9);
+    color: @white;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 2px;
+    background-color: transparent;
+    color: @workspaces;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    margin: 0 1px;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    border-bottom: 2px solid @blue;
+}
+
+#workspaces button.focused {
+    color: @blue;
+    font-weight: bold;
+    border-bottom: 2px solid @blue;
+}
+
+#workspaces button.urgent {
+    color: @red;
+    border-bottom: 2px solid @red;
+}
+
+#mode {
+    color: @mode;
+    font-style: italic;
+    border-bottom: 2px solid @mode;
+    margin: 0 2px;
+}
+
+#clock {
+    color: @clock;
+    border-bottom: 2px solid @clock;
+    margin: 0 2px;
+}
+
+#battery {
+    color: @battery;
+    border-bottom: 2px solid @battery;
+    margin: 0 2px;
+}
+
+#battery.charging, #battery.plugged {
+    color: @green;
+    border-bottom: 2px solid @green;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    border-bottom: 2px solid @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: @cpu;
+    border-bottom: 2px solid @cpu;
+    margin: 0 2px;
+}
+
+#memory {
+    color: @memory;
+    border-bottom: 2px solid @memory;
+    margin: 0 2px;
+}
+
+#temperature {
+    color: @temperature;
+    border-bottom: 2px solid @temperature;
+    margin: 0 2px;
+}
+
+#temperature.critical {
+    color: @red;
+    border-bottom: 2px solid @red;
+}
+
+#network {
+    color: @network;
+    border-bottom: 2px solid @network;
+    margin: 0 2px;
+}
+
+#network.disconnected {
+    color: @red;
+    border-bottom: 2px solid @red;
+}
+
+#pulseaudio {
+    color: @pulseaudio;
+    border-bottom: 2px solid @pulseaudio;
+    margin: 0 2px;
+}
+
+#pulseaudio.muted {
+    color: @gray;
+    border-bottom: 2px solid @gray;
+}
+
+#tray {
+    margin: 0 2px;
+    color: @tray;
+}
+
+#tray > * {
+    margin: 0 1px;
+}
+
+/* Animations */
+@keyframes blink {
+    to {
+        color: @black;
+        border-bottom: 2px solid @black;
+    }
+}

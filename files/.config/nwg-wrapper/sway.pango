@@ -8,6 +8,9 @@
 <span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + Shift + a</span> - Reload Waybar
 <span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + w</span> - Close window
 <span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + c</span> - Change wallpaper
+<span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + v</span> - Clipboard
+<span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + g</span> - Screen Record
+<span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + u</span> - Toggle Dynamic Mode
 
 <span font='Iosevka Nerd Font 10' foreground='#D3C6AA'><b>Window Management</b></span>
 <span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + $left / $down / $up / $right</span> - Focus window

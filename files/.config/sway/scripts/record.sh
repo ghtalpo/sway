@@ -46,5 +46,5 @@ OUTPUT=${OUTPUT:-$DEFAULT_OUTPUT}
 
 
 log_info "Starting record, press Ctrl + C to end record"
-wf-recorder -f "$OUTPUT"
+wf-recorder -a -f "$OUTPUT"
 trap 'log_warning "Recording stopped. File saved as $OUTPUT"; exit' INT

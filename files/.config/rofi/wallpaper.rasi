@@ -56,7 +56,28 @@ element {
   border-radius: 10px;
   padding: 0px;
   margin: 0px;
+  text-color: @foreground;
   background-color: transparent;
+}
+
+element alternative {
+ background-color: transparent;
+}
+
+
+element active.alternative {
+ background-color: transparent;
+}
+
+
+element normal.alternative {
+ background-color: transparent;
+}
+
+
+
+element selected.alternative {
+ background-color: transparent;
 }
 
 element selected.normal {

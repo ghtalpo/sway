@@ -55,6 +55,10 @@ set $lock 'swaylock \
     --indicator-thickness 10 \
     --font "Iosevka Nerd Font Mono"'
 
+### Environment Variables
+
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+
 
 ### Colorscheme
 
@@ -114,6 +118,7 @@ font pango:Iosevka Nerd Font Mono 12
 ## Sway Automatic Tiling
 exec autotiling
 
+
 ## Emacs Daemon
 exec /usr/bin/emacs --daemon
 
@@ -129,6 +134,10 @@ exec waybar
 
 ## SWWW Wallpaper Daemon
 exec swww-daemon
+
+## SWWW Random Wallpaper
+exec bash -c 'swww img "$(find ~/wallpapers-sway -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n1)" -t none'
+
 
 ## Mako Notification
 exec mako
@@ -163,7 +172,10 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
     # Clipboard
     bindsym $mod+v exec cliphist list | rofi -dmenu -p "Clipboard" -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy
 
-    # Binds
+    # Emoji Picker
+    bindsym $mod+s exec rofi -show emoji -modi emoji
+
+    # Lock
     bindsym $mod+shift+t exec $lock
 
     # Tiling Modes
@@ -173,7 +185,9 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
     bindsym $mod+g exec ~/.config/sway/scripts/prompt-record.sh
 
     # File Manager
-    # Reload Waybar
+    bindsym $mod+y exec $file-manager
+
+# Reload Waybar
     bindsym $mod+shift+a exec pkill -SIGUSR2 waybar
 
     # Call the browser variable and launch it with $mod+b
@@ -181,6 +195,7 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
 
     # Kill focused window
     bindsym $mod+w kill
+
 
     # Wallpaper
     bindsym $mod+c exec ~/.config/sway/scripts/wallpaper.sh
@@ -262,7 +277,7 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
 #
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    bindsym $mod+shift+s layout stacking
     bindsym $mod+t floating toggle
 
 
@@ -361,3 +376,9 @@ client.unfocused $bg0 $bg1 $gray $bg0 $bg1
 
 # Urgent window (e.g., alerts)
 client.urgent $yellow $bg1 $fg $yellow $yellow
+
+### Border Gaps setup
+
+#gaps inner 4
+#gaps outer 6
+#default_border pixel 2
