@@ -156,8 +156,8 @@ window#waybar {
 }
 
 #custom-playerctl.Playing {
-    color: @green;
-    border-bottom-color: @green;
+    color: @cyan;
+    border-bottom-color: @cyan;
 }
 
 #custom-playerctl.Paused {

@@ -36,6 +36,7 @@
 
 window {
     background-color: @background;
+    location: center;
     border:           2;
     padding:          5;
 }

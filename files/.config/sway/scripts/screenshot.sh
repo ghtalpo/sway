@@ -7,6 +7,9 @@ output="$HOME/Pictures/screenshots/shot_$(date +"%Y-%m-%d-%H-%M-%S").png"
 mkdir -p "$HOME/Pictures/screenshots"
 
 
+
+pkill grim
+pkill slurp
 screenshot() {
     if [ "$1" = "region" ]; then
         # Take a screenshot with GRIM and slurp

@@ -1,4 +1,12 @@
-<span font='Iosevka Nerd Font 12' foreground='#D3C6AA'><big><b>Keybindings</b></big></span>
+<span font='Iosevka Nerd Font 12' foreground='#D3C6AA'><big><b>Hello, Arkboi</b></big></span>
+<span font='Iosevka Nerd Font 10' foreground='#7FBBB3'>What sorta stuff you upto today?</span> - Gooing
+<span font='Iosevka Nerd Font 10' foreground='#7FBBB3'>wlroots hehe.</span> - Neofetch
+<span font='Iosevka Nerd Font 10' foreground='#7FBBB3'>OBS Studio and screen sharing work</span> - XDG Desktop Portal
+<span font='Iosevka Nerd Font 10' foreground='#7FBBB3'>vaxry suck</span> - Hyprlad
+
+
+
+<span font='Iosevka Nerd Font 12' foreground='#D3C6AA'><big><b>SwayWM Keybindings</b></big></span>
 
 <span font='Iosevka Nerd Font 10' foreground='#D3C6AA'><b>Applications</b></span>
 <span font='Iosevka Nerd Font 10' foreground='#E67E80'>$mod + Return</span> - Open terminal

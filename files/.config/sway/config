@@ -55,10 +55,10 @@ set $lock 'swaylock \
     --indicator-thickness 10 \
     --font "Iosevka Nerd Font Mono"'
 
-### Environment Variables
+### OBS
 
-exec --no-startup-id /usr/lib/xdg-desktop-portal -r
-
+exec --no-startup-id /usr/lib/xdg-desktop-portal
+exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr
 
 ### Colorscheme
 
@@ -143,7 +143,7 @@ exec bash -c 'swww img "$(find ~/wallpapers-sway -type f \( -iname "*.png" -o -i
 exec mako
 
 ## NWG Wrapper keybinds
-exec nwg-wrapper -t sway.pango -p left -a end -mb 10 -ml 10
+exec nwg-wrapper -t sway.pango -p right -mr 0
 
 ## Autostart Applications
 
@@ -377,8 +377,12 @@ client.unfocused $bg0 $bg1 $gray $bg0 $bg1
 # Urgent window (e.g., alerts)
 client.urgent $yellow $bg1 $fg $yellow $yellow
 
-### Border Gaps setup
 
-#gaps inner 4
-#gaps outer 6
-#default_border pixel 2
+# Borders and Gaps.
+
+gaps inner 4
+gaps outer 4
+default_border normal
+
+
+titlebar_padding 8 2
