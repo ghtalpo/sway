@@ -15,7 +15,7 @@ These are my SwayWM Configuration files. I use these with Arco Linux, but it is 
 
 Main Branch (*Grimy Grove*)
 
-![assets/1.png](assets/1.png)
+![assets/01.png](assets/01.png)
 
 
 ## 🏔️ Installation 🏔️
