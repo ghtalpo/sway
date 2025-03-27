@@ -40,3 +40,4 @@
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    16  100    16    0     0     26      0 --:--:-- --:--:-- --:--:--    26
 Gdk-Message: 12:25:51.292: Error reading events from display: Connection reset by peer
+Gdk-Message: 13:01:20.283: Error reading events from display: Connection reset by peer

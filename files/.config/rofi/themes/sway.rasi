@@ -1,38 +1,40 @@
 /************************************************
- * ROFI Color theme
+ * ROFI Color theme - Pastel TTY
  * User: Arkboi
  ***********************************************/
 
 * {
-    selected-normal-foreground:  rgba(220, 216, 180, 100%);   /* Everforest light text */
-    foreground:                  rgba(160, 170, 150, 100%);   /* Everforest normal text */
+    selected-normal-foreground:  rgba(74, 74, 74, 100%);      /* Black */
+    foreground:                  rgba(224, 224, 224, 100%);   /* Foreground */
     normal-foreground:           @foreground;
-    alternate-normal-background: rgba(48, 52, 58, 100%);
-    red:                         rgba(206, 54, 43, 100%);     /* Everforest red */
-    selected-urgent-foreground:  rgba(220, 216, 180, 100%);   /* Everforest light text */
-    blue:                        rgba(38, 139, 210, 100%);    /* Everforest blue */
-    urgent-foreground:           rgba(204, 102, 102, 100%);   /* Everforest urgent red */
-    alternate-urgent-background: rgba(40, 45, 49, 90%);       /* Everforest background soft */
-    active-foreground:           rgba(101, 172, 255, 100%);   /* Everforest active text */
-    lightbg:                     rgba(238, 232, 213, 100%);   /* Everforest background light */
-    selected-active-foreground:  rgba(220, 216, 180, 100%);   /* Everforest light text */
-    alternate-active-background: rgba(40, 45, 49, 89%);       /* Everforest dark soft */
-    background:                  rgba(40, 45, 49, 100%);      /* Everforest dark background */
+    alternate-normal-background: rgba(47, 47, 47, 100%);       /* Background light */
+    red:                         rgba(255, 154, 158, 100%);    /* Red */
+    selected-urgent-foreground:  rgba(255, 255, 255, 100%);   /* White */
+    blue:                        rgba(165, 216, 255, 100%);    /* Blue */
+    urgent-foreground:           rgba(255, 154, 158, 100%);    /* Red */
+    alternate-urgent-background: rgba(36, 36, 36, 90%);       /* Dark background */
+    active-foreground:           rgba(163, 232, 232, 100%);   /* Cyan */
+    lightbg:                     rgba(47, 47, 47, 100%);      /* Background light */
+    selected-active-foreground:  rgba(255, 255, 255, 100%);   /* White */
+    alternate-active-background: rgba(36, 36, 36, 89%);       /* Dark background */
+    background:                  rgba(36, 36, 36, 100%);      /* Dark background */
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
-    lightfg:                     rgba(88, 104, 117, 100%);    /* Everforest muted text */
-    selected-normal-background:  rgba(72, 106, 90, 100%);     /* Everforest selection green */
-    border-color:                rgba(124, 131, 137, 100%);   /* Everforest border */
+    lightfg:                     rgba(221, 160, 221, 100%);   /* Magenta */
+    selected-normal-background:  rgba(163, 232, 232, 100%);   /* Cyan */
+    border-color:                rgba(163, 232, 232, 100%);   /* Cyan */
     spacing:                     2;
-    separatorcolor:              rgba(29, 31, 33, 100%);      /* Everforest separator */
-    urgent-background:           rgba(29, 31, 33, 17%);       /* Everforest urgent background */
-    selected-urgent-background:  rgba(165, 66, 66, 100%);     /* Everforest urgent red */
+    separatorcolor:              rgba(74, 74, 74, 100%);      /* Black */
+    urgent-background:           rgba(74, 74, 74, 17%);       /* Black */
+    selected-urgent-background:  rgba(255, 154, 158, 100%);   /* Red */
     alternate-urgent-foreground: @urgent-foreground;
     background-color:            rgba(0, 0, 0, 0%);          /* Transparent background */
     alternate-active-foreground: @active-foreground;
-    active-background:           rgba(29, 31, 33, 17%);       /* Everforest active background */
-    selected-active-background:  rgba(68, 145, 237, 100%);    /* Everforest selection blue */
+    active-background:           rgba(74, 74, 74, 17%);       /* Black */
+    selected-active-background:  rgba(163, 232, 232, 100%);   /* Cyan */
 }
+
+
 
 window {
     background-color: @background;

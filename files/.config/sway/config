@@ -57,19 +57,33 @@ set $lock 'swaylock \
 
 ### OBS
 
-exec --no-startup-id /usr/lib/xdg-desktop-portal
-exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr
 
 ### Colorscheme
 
 # Everforest colors
-set $bg0  #2d353b
-set $bg1  #343f44
-set $fg   #d3c6aa
-set $green #a7c080
-set $blue  #7fbbb3
-set $yellow #dbbc7f
-set $gray  #868d80
+#set $bg0  #2d353b
+#set $bg1  #343f44
+#set $fg   #d3c6aa
+#set $green #a7c080
+#set $blue  #7fbbb3
+#set $yellow #dbbc7f
+#set $gray  #868d80
+
+# Pastel TTY Colors
+set $bg0    #282828
+set $bg1    #323232
+set $fg     #e0e0e0
+set $green  #b5e8a9
+set $blue   #a5d8ff
+set $yellow #ffe6a7
+set $gray   #a0a0a0
+set $red    #ff9a9e
+set $magenta #dda0dd
+set $cyan   #a3e8e8
+set $white  #ffffff
+set $orange #ffbb8a
+
 
 ### Output configuration
 #
@@ -136,7 +150,7 @@ exec waybar
 exec swww-daemon
 
 ## SWWW Random Wallpaper
-exec bash -c 'swww img "$(find ~/wallpapers-sway -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n1)" -t none'
+exec bash -c 'swww img "$(find ~/wallpapers-extra -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n1)" -t none'
 
 
 ## Mako Notification
@@ -173,7 +187,8 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
     bindsym $mod+v exec cliphist list | rofi -dmenu -p "Clipboard" -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy
 
     # Emoji Picker
-    bindsym $mod+s exec rofi -show emoji -modi emoji
+    bindsym $mod+s exec rofi -show emoji -modi emoji -matching regex -sorting-method levenshtein
+
 
     # Lock
     bindsym $mod+shift+t exec $lock
@@ -369,7 +384,7 @@ include @sysconfdir@/sway/config.d/*
 
 
 # Focused window (active)
-client.focused $green $bg1 $fg $yellow $green
+client.focused $cyan $bg1 $fg $yellow $cyan
 
 # Unfocused window (inactive)
 client.unfocused $bg0 $bg1 $gray $bg0 $bg1

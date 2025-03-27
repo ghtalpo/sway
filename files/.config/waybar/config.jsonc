@@ -4,9 +4,10 @@
     "height": 28,
     "spacing": 1,
     "margin": 0,
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/weather"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "backlight", "network", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "custom/quote", "tray"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/weather", "custom/quote"],
+    "modules-center": [],
+    "modules-right": ["clock","pulseaudio", "backlight", "network", "cpu", "memory", "temperature", "battery", "disk", "custom/uptime", "custom/updates", "tray"],
+
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -49,7 +50,7 @@
     "custom/quote": {
         "format": "󰚛 {}",
         "interval": 3600,
-        "exec": "fortune -s | tr -d '\\n' | cut -c -50",
+        "exec": "fortune -s",
         "on-click": "fortune | yad --text-info --width=400 --height=200 --title='Fortune'",
         "tooltip": true
     },
