@@ -4,7 +4,8 @@ These are my SwayWM Configuration files. I use these with Arco Linux, but it is 
 
 ## 🥭 Notable Features 🥭
 
-- Everforest Dark colors.
+- Pastel TTY colors.
+- Changing Colors are easy!
 - Rofi app launcher
 - Simple designs
 - Keybindings widget
@@ -23,7 +24,7 @@ Main Branch (*Grimy Grove*)
 0- Install packages
 
 ``` shell
-sudo pacman -S sway waybar rofi-wayland mako kitty nwg-bar fortune-mod swayidle
+sudo pacman -S sway waybar rofi-wayland mako kitty nwg-bar fortune-mod swayidle xdg-desktop-portal xdg-desktop-portal-wlr
 ```
 
 1 - Clone the repository:
