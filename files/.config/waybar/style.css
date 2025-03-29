@@ -1,4 +1,4 @@
-/* Colorschemes, there are Gruvbox, Tokyo Night, and Everforest by default. The way it works is whichever colorscheme section is defined last will be used. Here everforest is last, but put any one you want to use as the last one. */
+/*Colorschemes, there are Gruvbox, Tokyo Night, and Everforest by default. The way it works is whichever colorscheme section is defined last will be used. Here everforest is last, but put any one you want to use as the last one. ssdsssssssss*/
 
 
 /* Gruvbox Dark Colors */
@@ -45,18 +45,18 @@
 @define-color orange #e69875;
 
 /* Pastel TTY Colors */
-@define-color background #282828;
+@define-color background #212121;
 @define-color background-light #3a3a3a;
 @define-color foreground #e0e0e0;
 @define-color black #5a5a5a;
 @define-color red #ff9a9e;
 @define-color green #b5e8a9;
 @define-color yellow #ffe6a7;
-@define-color blue #a5d8ff;
+@define-color blue #63a4ff;
 @define-color magenta #dda0dd;
 @define-color cyan #a3e8e8;
 @define-color white #ffffff;
-@define-color orange #ffbb8a;
+@define-color orange #ff8952;
 
 
 /* Module-specific colors */
@@ -96,7 +96,7 @@
     /* Base styling for all modules */
     border: none;
     border-radius: 0;
-    font-family: "Iosevka Nerd Font", monospace;
+    font-family: "Iosevka Nerd Font";
     font-size: 14px;
     min-height: 0;
 }
@@ -105,6 +105,7 @@ window#waybar {
     background-color: @background;
     color: @foreground;
 }
+
 
 /* Common module styling with border-bottom */
 #mode, #mpd, #custom-weather, #custom-playerctl, #clock, #cpu,
@@ -119,7 +120,7 @@ window#waybar {
 
 /* Workspaces styling */
 #workspaces button {
-    padding: 0px;
+    padding: 0 10px;
     background-color: transparent;
     color: @workspaces-color;
     margin: 0;

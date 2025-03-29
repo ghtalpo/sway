@@ -65,20 +65,20 @@ element alternative {
 }
 
 
-element active.alternative {
- background-color: transparent;
+
+
+element.alternate.normal {
+    background-color: transparent;
 }
 
-
-element normal.alternative {
- background-color: transparent;
+element.alternate.urgent {
+    background-color: transparent;
 }
 
-
-
-element selected.alternative {
- background-color: transparent;
+element.alternate.active {
+    background-color: transparent;
 }
+
 
 element selected.normal {
   background-color: transparent;
@@ -100,12 +100,15 @@ element-text {
   vertical-align: 0.5;
   horizontal-align: 0.5;
   padding: 6px;
-  background-color: transparent;
   margin: 6px;
 }
 
 
 element-text selected {
-    background-color: @selected-normal-background;
-    border-radius: 4px;
+  background-color: @blue;
+    border-radius: 0px;
+}
+
+entry {
+      text-color: @white;
 }

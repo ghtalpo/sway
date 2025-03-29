@@ -3,7 +3,6 @@
 # AUTHOR: Arkboi X
 # CREDIT: https://github.com/arkboix
 
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -55,9 +54,18 @@ set $lock 'swaylock \
     --indicator-thickness 10 \
     --font "Iosevka Nerd Font Mono"'
 
-### OBS
+### OBS Fixes and XDG Desktop
 
-exec --no-startup-id /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr
+# Set XDG_CURRENT_DESKTOP for proper Wayland support
+exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# Start xdg-desktop-portal services (ensure wlr starts first)
+exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr &
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+
+# Sov
+
+exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500
 
 ### Colorscheme
 
@@ -130,8 +138,10 @@ font pango:Iosevka Nerd Font Mono 12
 
 
 ## Sway Automatic Tiling
-exec autotiling
+exec autotiling -l 2
 
+## Flameshot
+exec flameshot
 
 ## Emacs Daemon
 exec /usr/bin/emacs --daemon
@@ -172,7 +182,6 @@ for_window [app_id="yad"] floating enable
 for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position center, resize set 600 400
 
 
-
 ### Key bindings
 #
 # Basics:
@@ -182,6 +191,9 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
 
     # Start Emacs
     bindsym $mod+e exec emacsclient -c
+
+    # Sticky Mode
+    bindsym $mod+a exec sticky enable
 
     # Clipboard
     bindsym $mod+v exec cliphist list | rofi -dmenu -p "Clipboard" -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy
@@ -263,29 +275,29 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
 #
 # Workspaces:
 #
-    # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
+bindsym --no-repeat $mod+1 workspace number 1; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+2 workspace number 2; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+3 workspace number 3; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+4 workspace number 4; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+5 workspace number 5; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+6 workspace number 6; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+7 workspace number 7; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+8 workspace number 8; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+9 workspace number 9; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+0 workspace number 10; exec "echo 1 > /tmp/sovpipe"
+
+bindsym --release $mod+1 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+2 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+3 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+4 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+5 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+6 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+7 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+8 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+9 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+0 exec "echo 0 > /tmp/sovpipe"
+
+# Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
 # Layout stuff:
@@ -295,6 +307,10 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
     bindsym $mod+shift+s layout stacking
     bindsym $mod+t floating toggle
 
+
+    # Manual Tiling Modes
+       bindsym $mod+p splith
+    bindsym $mod+o splitv
 
 
     # Make the current focus fullscreen
@@ -306,8 +322,6 @@ for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -356,27 +370,28 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec ~/.config/sway/scripts/screenshot.sh region
+    bindsym Print exec flameshot gui
 
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-#bar {
- #   position top
+##bar {
+#   position top
 
 #    # When the status_command prints a new line to stdout, swaybar updates.
 #    # The default just shows the current date and time.
-  #  status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+  #status_command ~/.config/sway/scripts/status.sh
 
-   # colors {
-    #    statusline $fg
-     #   background $bg0
-      #  inactive_workspace $bg0 $bg0 $bg1
-       # focused_workspace $green $bg1 $green
 
-    # }
-# }
+ #colors {
+  #  statusline $fg
+   #     background $bg0
+    #    inactive_workspace $bg0 $bg0 $bg1
+     #   focused_workspace $orange $bg1 $orange
+
+   #}
+ #}
 
 include @sysconfdir@/sway/config.d/*
 
@@ -397,7 +412,9 @@ client.urgent $yellow $bg1 $fg $yellow $yellow
 
 gaps inner 4
 gaps outer 4
-default_border normal
 
+default_border pixel 2
 
 titlebar_padding 8 2
+titlebar_border_thickness 2
+# other sway config stuff...

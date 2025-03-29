@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 28,
+    "height": 30,
     "spacing": 1,
     "margin": 0,
     "modules-left": ["sway/workspaces", "sway/mode", "custom/weather", "custom/quote"],
@@ -14,9 +14,16 @@
         "all-outputs": true,
         "format": "{name}",
         "format-icons": {
-            "urgent": "",
-            "focused": "",
-            "default": ""
+            "1": "󰖟",
+            "2": "",
+            "3": "",
+            "4": "󰭹",
+            "5": "󰕧",
+            "6": "",
+            "7": "",
+            "8": "󰣇",
+            "9": "",
+            "10": ""
         },
         "persistent_workspaces": {
             "1": [],

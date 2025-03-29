@@ -1,32 +1,57 @@
 // -*- mode: jsonc -*-
 {
-     "layer": "top", // Waybar at top layer
-     "height": 30, // Waybar height (to be removed for auto height)
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
-
-
-// Choose the order of the modules
+    // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
-        "sway/mode"
+        "sway/mode",
+        "custom/layout",
+        "sway/window"
     ],
     "modules-center": [
     ],
     "modules-right": [
-        "pulseaudio",
         "network",
+        "pulseaudio",
         "cpu",
         "memory",
-        "backlight",
         "battery",
+        "backlight",
         "clock",
-        "tray"
+        "tray",
     ],
     // Modules configuration
-
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+
+"custom/layout": {
+    "exec": "pgrep -x autotiling > /dev/null && echo '[]= ' || echo '><>'",
+    "interval": 1
+}
+
+}
+
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -65,7 +90,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
+        "format-wifi": "[WIFI]{essid}",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -74,7 +99,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "[VOL] {volume}% ",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
