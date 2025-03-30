@@ -163,7 +163,7 @@ exec waybar
 exec swww-daemon
 
 ## SWWW Random Wallpaper
-exec bash -c 'swww img "$(find ~/wallpapers-extra -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n1)" -t none'
+exec bash -c 'swww img "$(find ~/wallpapers-extra/flowers -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n1)" -t none'
 
 
 ## Mako Notification
@@ -171,6 +171,8 @@ exec mako
 
 ## NWG Wrapper keybinds
 exec nwg-wrapper -t sway.pango -p right -mr 0
+exec nwg-wrapper -s quick.sh -a end -p left -ml 10 -mb 10 -r 60
+exec nwg-wrapper -s quote.sh -p left -a end -mb 10 -ml 260
 
 ## Autostart Applications
 
