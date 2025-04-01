@@ -41,3 +41,25 @@
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    16  100    16    0     0     26      0 --:--:-- --:--:-- --:--:--    26
 Gdk-Message: 12:25:51.292: Error reading events from display: Connection reset by peer
 Gdk-Message: 13:01:20.283: Error reading events from display: Connection reset by peer
+[2025-03-30 19:52:24.358] [info] Using configuration file /home/a/.config/waybar/config.jsonc
+[2025-03-30 19:52:24.361] [info] Using CSS file /home/a/.config/waybar/style.css
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[2025-03-30 19:52:24.510] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+
+** (waybar:1509315): WARNING **: 19:52:24.516: Status Notifier Item with bus name ':1.15' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+  0    12    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    12  100    12    0     0     18      0 --:--:-- --:--:-- --:--:--    18
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100    12  100    12    0     0      5      0  0:00:02  0:00:02 --:--:--     5100    12  100    12    0     0      5      0  0:00:02  0:00:02 --:--:--     5
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    12  100    12    0     0      9      0  0:00:01  0:00:01 --:--:--     9
+[0.291] [glfw error 65544]: Notify: Failed to get server capabilities error: [org.freedesktop.DBus.Error.NoReply] Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100    12  100    12    0     0      7      0  0:00:01  0:00:01 --:--:--     7
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100    12  100    12    0     0      7      0  0:00:01  0:00:01 --:--:--     7100    12  100    12    0     0      7      0  0:00:01  0:00:01 --:--:--     7
+Gdk-Message: 23:58:34.491: Error reading events from display: Connection reset by peer
