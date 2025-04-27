@@ -27,7 +27,7 @@ Main Branch (*Grimy Grove*)
 sudo pacman -S sway waybar rofi-wayland mako kitty nwg-bar fortune-mod swayidle xdg-desktop-portal xdg-desktop-portal-wlr
 ```
 ``` shell
-sudo xbps-install -f sway Waybar rofi mako kitty nwg-launchers fortune-mod swayidle xdg-desktop-portal xdg-desktop-portal-wlr
+sudo xbps-install -f sway Waybar rofi mako kitty nwg-launchers fortune-mod swayidle xdg-desktop-portal xdg-desktop-portal-wlr nerd-fonts-ttf python3-s-tui htop pulseaudio 
 ```
 
 1 - Clone the repository:
