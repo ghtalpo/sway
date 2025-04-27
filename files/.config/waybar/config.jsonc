@@ -64,9 +64,9 @@
 
     "custom/updates": {
         "format": "󰚰 {}",
-        "exec": "checkupdates | wc -l",
+        "exec": "xbps-install -Mun | wc -l",
         "interval": 3600,
-        "on-click": "kitty -e sudo pacman -Syu",
+        "on-click": "kitty -e sudo xbps-install -Su",
         "signal": 8
     },
 
