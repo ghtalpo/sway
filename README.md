@@ -26,6 +26,9 @@ Main Branch (*Grimy Grove*)
 ``` shell
 sudo pacman -S sway waybar rofi-wayland mako kitty nwg-bar fortune-mod swayidle xdg-desktop-portal xdg-desktop-portal-wlr
 ```
+``` shell
+sudo xbps-install -f sway Waybar rofi mako kitty nwg-launchers fortune-mod swayidle xdg-desktop-portal xdg-desktop-portal-wlr
+```
 
 1 - Clone the repository:
 
@@ -38,7 +41,7 @@ rm -rf ~/.config/sway ~/.config/waybar ~/.config/rofi ~/.config/kitty ~/.config/
 ```
 3- Copy files over
 ``` shell
-cp ~/sway/files/.config/* ~/.config
+cp -r ~/sway/files/.config/* ~/.config
 ````
 
 This should be it for the installation.
